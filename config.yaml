@@ -1,0 +1,38 @@
+project:
+  name: crypto-volatility-detector
+  description: Real-time crypto volatility spike detection pipeline
+
+data:
+  pairs:
+    - BTC-USD
+  raw_dir: data/raw
+  processed_dir: data/processed
+
+kafka:
+  bootstrap_servers: localhost:9092
+  topics:
+    raw: ticks.raw
+    features: ticks.features
+
+features:
+  horizon_seconds: 60
+  windows:
+    - 30
+    - 60
+    - 120
+  volatility_proxy: rolling_std_midprice_returns
+  spike_threshold: null  # set after EDA
+
+model:
+  train_split: 0.6
+  val_split: 0.2
+  test_split: 0.2
+  split_method: time_based
+  primary_metric: pr_auc
+
+mlflow:
+  tracking_uri: http://localhost:5000
+  experiment_name: crypto-volatility
+
+evidently:
+  reports_dir: reports/evidently

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Quality Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #fafafa; }
+        h1 { color: #1a1a2e; }
+        h2 { color: #16213e; margin-top: 30px; }
+        .summary { background: #fff; padding: 20px; border-radius: 8px;
+                    box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin: 20px 0; }
+        table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+        th { background: #1a1a2e; color: white; padding: 10px 6px; text-align: left; font-size: 12px; }
+        td { padding: 7px 6px; border-bottom: 1px solid #ddd; font-size: 11px; }
+        .metric { font-size: 28px; font-weight: bold; color: #1a1a2e; }
+        .label { font-size: 14px; color: #666; }
+        .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 15px; }
+        .card { background: #fff; padding: 20px; border-radius: 8px; text-align: center;
+                 box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body>
+    <h1>📋 Data Quality Report</h1>
+    <p>Dataset: features.parquet | 5265 rows | 21 features</p>
+    <p>Generated: 2026-04-05 20:38:37</p>
+    
+    <div class="grid">
+        <div class="card">
+            <div class="metric">5,265</div>
+            <div class="label">Total Rows</div>
+        </div>
+        <div class="card">
+            <div class="metric">21</div>
+            <div class="label">Features</div>
+        </div>
+        <div class="card">
+            <div class="metric">0</div>
+            <div class="label">Missing Values</div>
+        </div>
+        <div class="card">
+            <div class="metric" style="color: green;">100.0%</div>
+            <div class="label">Completeness</div>
+        </div>
+    </div>
+
+    <h2>Feature Quality Summary</h2>
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Count</th>
+            <th>Missing</th>
+            <th>Zeros</th>
+            <th>Mean</th>
+            <th>Std</th>
+            <th>Min</th>
+            <th>Q25</th>
+            <th>Q50</th>
+            <th>Q75</th>
+            <th>Max</th>
+        </tr>
+        
+        <tr>
+            <td>price</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>68316.93417778</td>
+            <td>115.96728344</td>
+            <td>68051.50000000</td>
+            <td>68278.01000000</td>
+            <td>68320.42000000</td>
+            <td>68415.47000000</td>
+            <td>68558.23000000</td>
+        </tr>
+        <tr>
+            <td>midprice</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>68317.04954891</td>
+            <td>115.48462145</td>
+            <td>68050.80000000</td>
+            <td>68278.64500000</td>
+            <td>68320.27000000</td>
+            <td>68415.46500000</td>
+            <td>68558.22500000</td>
+        </tr>
+        <tr>
+            <td>spread</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.23705413</td>
+            <td>0.78422842</td>
+            <td>0.01000000</td>
+            <td>0.01000000</td>
+            <td>0.01000000</td>
+            <td>0.01000000</td>
+            <td>14.80000000</td>
+        </tr>
+        <tr>
+            <td>spread_bps</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.03472824</td>
+            <td>0.11478221</td>
+            <td>0.00150000</td>
+            <td>0.00150000</td>
+            <td>0.00150000</td>
+            <td>0.00150000</td>
+            <td>2.16860000</td>
+        </tr>
+        <tr>
+            <td>mid_return</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>3542 (67.3%)</td>
+            <td>0.00000105</td>
+            <td>0.00004522</td>
+            <td>-0.00049555</td>
+            <td>0.00000000</td>
+            <td>0.00000000</td>
+            <td>0.00000000</td>
+            <td>0.00048471</td>
+        </tr>
+        <tr>
+            <td>volatility_30s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00004757</td>
+            <td>0.00003658</td>
+            <td>0.00001038</td>
+            <td>0.00003352</td>
+            <td>0.00004346</td>
+            <td>0.00005257</td>
+            <td>0.00062868</td>
+        </tr>
+        <tr>
+            <td>volatility_60s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00005054</td>
+            <td>0.00003682</td>
+            <td>0.00001401</td>
+            <td>0.00003638</td>
+            <td>0.00004167</td>
+            <td>0.00005277</td>
+            <td>0.00062868</td>
+        </tr>
+        <tr>
+            <td>volatility_120s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00005371</td>
+            <td>0.00003599</td>
+            <td>0.00002137</td>
+            <td>0.00004000</td>
+            <td>0.00004304</td>
+            <td>0.00005442</td>
+            <td>0.00062868</td>
+        </tr>
+        <tr>
+            <td>mean_return_30s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>23 (0.4%)</td>
+            <td>0.00000020</td>
+            <td>0.00001080</td>
+            <td>-0.00031187</td>
+            <td>-0.00000079</td>
+            <td>0.00000129</td>
+            <td>0.00000344</td>
+            <td>0.00001523</td>
+        </tr>
+        <tr>
+            <td>mean_return_60s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>11 (0.2%)</td>
+            <td>-0.00000001</td>
+            <td>0.00001051</td>
+            <td>-0.00031187</td>
+            <td>-0.00000070</td>
+            <td>0.00000120</td>
+            <td>0.00000296</td>
+            <td>0.00001523</td>
+        </tr>
+        <tr>
+            <td>mean_return_120s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>11 (0.2%)</td>
+            <td>-0.00000017</td>
+            <td>0.00001032</td>
+            <td>-0.00031187</td>
+            <td>-0.00000073</td>
+            <td>0.00000103</td>
+            <td>0.00000278</td>
+            <td>0.00001523</td>
+        </tr>
+        <tr>
+            <td>max_return_30s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00031806</td>
+            <td>0.00024417</td>
+            <td>0.00006843</td>
+            <td>0.00019605</td>
+            <td>0.00029005</td>
+            <td>0.00036762</td>
+            <td>0.00156895</td>
+        </tr>
+        <tr>
+            <td>max_return_60s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00040303</td>
+            <td>0.00030962</td>
+            <td>0.00007616</td>
+            <td>0.00028654</td>
+            <td>0.00033183</td>
+            <td>0.00039747</td>
+            <td>0.00156895</td>
+        </tr>
+        <tr>
+            <td>max_return_120s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.00052194</td>
+            <td>0.00039365</td>
+            <td>0.00007616</td>
+            <td>0.00033183</td>
+            <td>0.00039747</td>
+            <td>0.00048471</td>
+            <td>0.00156895</td>
+        </tr>
+        <tr>
+            <td>tick_intensity_30s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>5.39660678</td>
+            <td>0.96715807</td>
+            <td>0.16670000</td>
+            <td>5.06670000</td>
+            <td>5.50000000</td>
+            <td>5.90000000</td>
+            <td>7.13330000</td>
+        </tr>
+        <tr>
+            <td>tick_intensity_60s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>5.19960456</td>
+            <td>1.15273108</td>
+            <td>0.08330000</td>
+            <td>5.15000000</td>
+            <td>5.41670000</td>
+            <td>5.83330000</td>
+            <td>6.61670000</td>
+        </tr>
+        <tr>
+            <td>tick_intensity_120s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>4.90800368</td>
+            <td>1.44844513</td>
+            <td>0.04170000</td>
+            <td>4.95000000</td>
+            <td>5.39170000</td>
+            <td>5.75000000</td>
+            <td>6.15000000</td>
+        </tr>
+        <tr>
+            <td>mean_spread_30s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.23429878</td>
+            <td>0.15754463</td>
+            <td>0.01000000</td>
+            <td>0.12300000</td>
+            <td>0.19040000</td>
+            <td>0.31730000</td>
+            <td>0.82500000</td>
+        </tr>
+        <tr>
+            <td>mean_spread_60s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.23175514</td>
+            <td>0.11266906</td>
+            <td>0.01000000</td>
+            <td>0.15250000</td>
+            <td>0.21930000</td>
+            <td>0.29520000</td>
+            <td>0.53690000</td>
+        </tr>
+        <tr>
+            <td>mean_spread_120s</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>0 (0.0%)</td>
+            <td>0.22900256</td>
+            <td>0.08325619</td>
+            <td>0.01000000</td>
+            <td>0.17250000</td>
+            <td>0.21170000</td>
+            <td>0.29950000</td>
+            <td>0.44170000</td>
+        </tr>
+        <tr>
+            <td>book_imbalance</td>
+            <td>5265</td>
+            <td style="background-color: ;">0 (0.0%)</td>
+            <td>6 (0.1%)</td>
+            <td>-0.13600806</td>
+            <td>0.81094321</td>
+            <td>-1.00000000</td>
+            <td>-0.95537500</td>
+            <td>-0.43386900</td>
+            <td>0.83496100</td>
+            <td>1.00000000</td>
+        </tr>
+    </table>
+</body>
+</html>

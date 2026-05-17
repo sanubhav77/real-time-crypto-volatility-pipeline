@@ -1,0 +1,26 @@
+{
+  "model_type": "XGBoost",
+  "feature_cols": [
+    "mid_return",
+    "volatility_30s",
+    "volatility_60s",
+    "volatility_120s",
+    "mean_return_30s",
+    "mean_return_60s",
+    "mean_return_120s",
+    "max_return_30s",
+    "max_return_60s",
+    "max_return_120s",
+    "tick_intensity_30s",
+    "tick_intensity_60s",
+    "tick_intensity_120s",
+    "mean_spread_30s",
+    "mean_spread_60s",
+    "mean_spread_120s",
+    "spread_bps",
+    "book_imbalance"
+  ],
+  "best_threshold": 0.5,
+  "test_pr_auc": 0.043795620437956206,
+  "test_f1": 0.08391608391608392
+}

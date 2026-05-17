@@ -1,0 +1,6 @@
+{
+  "model_type": "baseline_zscore",
+  "train_mean": 5.6150487959442325e-05,
+  "train_std": 4.637447355679526e-05,
+  "zscore_threshold": 1.0
+}

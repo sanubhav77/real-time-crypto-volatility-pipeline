@@ -1,0 +1,18 @@
+FROM python:3.13-slim
+
+WORKDIR /app
+
+# Install dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy source code
+COPY scripts/ws_ingest.py scripts/ws_ingest.py
+COPY .env .env
+
+# Create data directory
+RUN mkdir -p data/raw
+
+# Default command: ingest BTC-USD for 15 minutes
+ENTRYPOINT ["python", "scripts/ws_ingest.py"]
+CMD ["--pair", "BTC-USD", "--minutes", "15"]
